@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.ARFoundation;
+using UnityEngine.UI;
+using System.Reflection;
 
 public class Track : MonoBehaviour
 {
@@ -10,18 +12,35 @@ public class Track : MonoBehaviour
     public ARTrackedImageManager manager;
 
     //트랙킹한 이미지에 활성화 시킬 게임 오브젝트를 저장할 리스트
-    public List<GameObject> list1 = new List<GameObject>();
+    public List<GameObject> list1 = new List<GameObject>();      
 
     //이미지의 이름을 키로 게임 오브젝트를 연결하는 딕셔너리
     Dictionary<string, GameObject> dict1 = new Dictionary<string, GameObject>();
+
+    //게임 오브젝트와 매핑되는 아이콘 이미지 리스트
+    public List<Image> images = new List<Image>();
+
+    //게임 오브젝트와 이미지를 연결하는 딕셔너리
+    Dictionary<GameObject, Image> dict2 = new Dictionary<GameObject, Image>();
+
 
     void Start()
     {
         //list1의 게임 오브젝트들을 dict1에 추가한다
         foreach (GameObject obj in list1)
         {
-            //dict1은 이미지으 이름을 사용하여 해당 이미지에 대응하는 게임 오브젝트를 찾는 매핑관계를 갖는다
+            //dict1은 이미지의 이름을 사용하여 해당 이미지에 대응하는 게임 오브젝트를 찾는 매핑관계를 갖는다
             dict1.Add(obj.name, obj);
+        }
+
+        //images 리스트의 이미지들을 dict2에 추가한다
+        int index = 0;
+        foreach(GameObject obj2 in list1)
+        {
+            Image image = images[index];
+            dict2.Add(obj2, image);
+            image.gameObject.SetActive(false);
+            index++;
         }
 
     }
@@ -61,6 +80,22 @@ public class Track : MonoBehaviour
         obj.transform.position = t.transform.position;
         obj.transform.rotation = t.transform.rotation;
         obj.SetActive(true);
+
+        Mapping(obj);
+
+    }
+
+    public void Mapping(GameObject ActiveObj)
+    {
+        //오브젝트에 해당하는 이미지 UI를 찾아온다
+        //dict2는 게임 오브젝트를 키로 하여 이미지를 가져온다
+        //TryGetValue() : 딕셔너리에 해당 키를 찾은 경우, 이미지를 반환한다
+        //이미지 UI를 찾지 못한 경우 out 매개 변수를 통해 image에 null을 할당한다
+        if(dict2.TryGetValue(ActiveObj, out Image image))
+        {
+            //이미지 UI를 상세 페이지에 표시
+            image.gameObject.SetActive(true); 
+        }
 
     }
 
