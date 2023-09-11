@@ -8,7 +8,7 @@ public class ARPlacement : MonoBehaviour
 {
     #region Variables
     public GameObject arObjectToSpawn;
-    public GameObject placementIndicator;
+    public GameObject centreIndicator;
 
     private GameObject spawnedObject;
     private Pose PlacementPose;
@@ -36,12 +36,12 @@ public class ARPlacement : MonoBehaviour
     {
         if (spawnedObject == null && placementPoselsValid)
         {
-            placementIndicator.SetActive(true);
-            placementIndicator.transform.SetPositionAndRotation(PlacementPose.position, PlacementPose.rotation);
+            centreIndicator.SetActive(true);
+            centreIndicator.transform.SetPositionAndRotation(PlacementPose.position, PlacementPose.rotation);
         }
         else
         {
-            placementIndicator.SetActive(false);
+            centreIndicator.SetActive(false);
         }
     }
 
