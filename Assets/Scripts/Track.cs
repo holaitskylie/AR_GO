@@ -4,20 +4,18 @@ using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.UI;
-using System.Reflection;
+
 
 public class Track : MonoBehaviour
 {
     public ARTrackedImageManager manager;
 
     public List<GameObject> list1 = new List<GameObject>();      
-
     Dictionary<string, GameObject> dict1 = new Dictionary<string, GameObject>();
 
     public List<Image> images = new List<Image>();
-
-    Dictionary<GameObject, Image> dict2 = new Dictionary<GameObject, Image>();
-
+    Dictionary<GameObject, Image> dict2 = new Dictionary<GameObject, Image>();  
+    
 
     void Start()
     {
@@ -48,13 +46,11 @@ public class Track : MonoBehaviour
     }
 
     void OnChanged(ARTrackedImagesChangedEventArgs eventArgs)
-    {
-        //�̹����� �߰� �Ǿ��� ��, �̹��� ������Ʈ
+    {        
         foreach (ARTrackedImage t in eventArgs.added)
         {
             UpdateImage(t);
         }
-
     }
 
     void UpdateImage(ARTrackedImage t)
@@ -66,8 +62,8 @@ public class Track : MonoBehaviour
         obj.transform.position = t.transform.position;
         obj.transform.rotation = t.transform.rotation;
         obj.SetActive(true);
-
-        Mapping(obj);
+             
+        Mapping(obj);           
 
     }
 
@@ -77,7 +73,5 @@ public class Track : MonoBehaviour
         {
             image.gameObject.SetActive(true); 
         }
-
     }
-
 }
