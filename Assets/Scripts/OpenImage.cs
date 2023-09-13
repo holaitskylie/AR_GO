@@ -31,6 +31,19 @@ public class OpenImage : MonoBehaviour
         
     }
 
+    void Update()
+    {
+        int index = 0;
+        foreach (Button button in buttons)
+        {
+            Image image = images[index];
+            imageDict.Add(button, image);
+            button.onClick.AddListener(() => OnButtonClick(button));
+            index++;
+        }
+
+    }
+
     void OnButtonClick(Button button)
     {    
       
