@@ -23,9 +23,12 @@ public class UIManager : MonoBehaviour
 
     public TextMeshProUGUI scoreText;
 
+    private bool isPaused = false; //게임 일시 정지 여부를 나타내는 변수
+
     public GameObject gameoverUI;
     public GameObject RestartUI;
     public GameObject MainUI;
+    public GameObject OptionImageUI;
 
     public int sceneNumber;
 
@@ -54,4 +57,29 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(sceneNumber);
     }
 
+    public void OptionUI(Button button)
+    {
+        //게임이 일시 정지되어 있지 않다면
+        if (!isPaused)
+        {
+            //게임 일시 정지
+            Time.timeScale = 0f;
+            isPaused = true;
+
+            //OptionImageUI 활성화
+            OptionImageUI.SetActive(true);
+        }
+    }
+
+    public void ContinueUI(Button button)
+    {
+        if (isPaused)
+        {
+            //게임 재개
+            Time.timeScale = 1f;
+            isPaused = false;
+
+            OptionImageUI.SetActive(false);
+        }
+    }
 }
