@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 public class OpenImage : MonoBehaviour
 {
-    //¹öÆ° UI ¸®½ºÆ®
+    //ï¿½ï¿½Æ° UI ï¿½ï¿½ï¿½ï¿½Æ®
     public List<Button> buttons = new List<Button>();
 
-    //ÀÌ¹ÌÁö UI ¸®½ºÆ®
+    //ï¿½Ì¹ï¿½ï¿½ï¿½ UI ï¿½ï¿½ï¿½ï¿½Æ®
     public List<Image> images = new List<Image>();
 
     Dictionary<Button, Image> imageDict = new Dictionary<Button, Image>();

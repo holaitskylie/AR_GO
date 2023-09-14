@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.ARFoundation;
+using UnityEngine.XR.ARSubsystems;
 using UnityEngine.UI;
 
 
@@ -51,6 +52,17 @@ public class Track : MonoBehaviour
         {
             UpdateImage(t);
         }
+        foreach (ARTrackedImage t in eventArgs.updated)
+        {
+            if (t.trackingState == TrackingState.Limited || t.trackingState == TrackingState.None)
+            {
+                DisableImage(t);
+            }
+            else
+            {
+                UpdateImage(t);
+            }
+        }
     }
 
     void UpdateImage(ARTrackedImage t)
@@ -62,9 +74,41 @@ public class Track : MonoBehaviour
         obj.transform.position = t.transform.position;
         obj.transform.rotation = t.transform.rotation;
         obj.SetActive(true);
-             
-        Mapping(obj);           
 
+        AddLeanComponents(obj);
+             
+        Mapping(obj);
+    }
+
+    void DisableImage(ARTrackedImage t)
+    {
+        string name = t.referenceImage.name;
+
+        if(dict1.TryGetValue(name, out GameObject obj))
+        {
+            obj.SetActive(false);
+
+            if(dict2.TryGetValue(obj, out Image image))
+            {
+                image.gameObject.SetActive(false);
+            }
+        }
+    }
+
+    void AddLeanComponents(GameObject obj)
+    {
+        if (!obj.GetComponent<Lean.Touch.LeanDragTranslate>())
+        {
+            obj.AddComponent<Lean.Touch.LeanDragTranslate>();
+        }
+        if (!obj.GetComponent<Lean.Touch.LeanPinchScale>())
+        {
+            obj.AddComponent<Lean.Touch.LeanPinchScale>();
+        }
+        if (!obj.GetComponent<Lean.Touch.LeanTwistRotateAxis>())
+        {
+            obj.AddComponent<Lean.Touch.LeanTwistRotateAxis>();
+        }
     }
 
     public void Mapping(GameObject ActiveObj)
