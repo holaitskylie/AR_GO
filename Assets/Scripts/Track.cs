@@ -51,6 +51,7 @@ public class Track : MonoBehaviour
         {
             UpdateImage(t);
         }
+        
     }
 
     void UpdateImage(ARTrackedImage t)
