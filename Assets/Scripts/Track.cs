@@ -5,18 +5,22 @@ using UnityEngine.XR;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using UnityEngine.UI;
-
+using Lean.Touch;
 
 public class Track : MonoBehaviour
 {
     public ARTrackedImageManager manager;
 
-    public List<GameObject> list1 = new List<GameObject>();      
+    public List<GameObject> list1 = new List<GameObject>();
     Dictionary<string, GameObject> dict1 = new Dictionary<string, GameObject>();
 
     public List<Image> images = new List<Image>();
-    Dictionary<GameObject, Image> dict2 = new Dictionary<GameObject, Image>();  
-    
+    Dictionary<GameObject, Image> dict2 = new Dictionary<GameObject, Image>();
+
+    public GameObject deleteButton;
+
+    //Added Stack
+    private Stack<GameObject> instantiatedPrefabs = new Stack<GameObject>();
 
     void Start()
     {
@@ -26,7 +30,7 @@ public class Track : MonoBehaviour
         }
 
         int index = 0;
-        foreach(GameObject obj2 in list1)
+        foreach (GameObject obj2 in list1)
         {
             Image image = images[index];
             dict2.Add(obj2, image);
@@ -34,6 +38,7 @@ public class Track : MonoBehaviour
             index++;
         }
 
+        deleteButton.GetComponent<Button>().onClick.AddListener(DeletePrefab);
     }
 
     void OnEnable()
@@ -47,21 +52,14 @@ public class Track : MonoBehaviour
     }
 
     void OnChanged(ARTrackedImagesChangedEventArgs eventArgs)
-    {        
+    {
         foreach (ARTrackedImage t in eventArgs.added)
         {
             UpdateImage(t);
         }
         foreach (ARTrackedImage t in eventArgs.updated)
         {
-            if (t.trackingState == TrackingState.Limited || t.trackingState == TrackingState.None)
-            {
-                DisableImage(t);
-            }
-            else
-            {
-                UpdateImage(t);
-            }
+            UpdateImage(t);
         }
     }
 
@@ -76,46 +74,43 @@ public class Track : MonoBehaviour
         obj.SetActive(true);
 
         AddLeanComponents(obj);
-             
+        //Add instantiated objects to Stack memory
+        instantiatedPrefabs.Push(obj);
+
         Mapping(obj);
-    }
-
-    void DisableImage(ARTrackedImage t)
-    {
-        string name = t.referenceImage.name;
-
-        if(dict1.TryGetValue(name, out GameObject obj))
-        {
-            obj.SetActive(false);
-
-            if(dict2.TryGetValue(obj, out Image image))
-            {
-                image.gameObject.SetActive(false);
-            }
-        }
     }
 
     void AddLeanComponents(GameObject obj)
     {
-        if (!obj.GetComponent<Lean.Touch.LeanDragTranslate>())
+        if (!obj.GetComponent<LeanDragTranslate>())
         {
-            obj.AddComponent<Lean.Touch.LeanDragTranslate>();
+            obj.AddComponent<LeanDragTranslate>();
         }
-        if (!obj.GetComponent<Lean.Touch.LeanPinchScale>())
+        if (!obj.GetComponent<LeanPinchScale>())
         {
-            obj.AddComponent<Lean.Touch.LeanPinchScale>();
+            obj.AddComponent<LeanPinchScale>();
         }
-        if (!obj.GetComponent<Lean.Touch.LeanTwistRotateAxis>())
+        if (!obj.GetComponent<LeanTwistRotate>())
         {
-            obj.AddComponent<Lean.Touch.LeanTwistRotateAxis>();
+            obj.AddComponent<LeanTwistRotate>();
         }
     }
 
     public void Mapping(GameObject ActiveObj)
     {
-        if(dict2.TryGetValue(ActiveObj, out Image image))
+        if (dict2.TryGetValue(ActiveObj, out Image image))
         {
-            image.gameObject.SetActive(true); 
+            image.gameObject.SetActive(true);
+        }
+    }
+
+    public void DeletePrefab()
+    {
+        // Delete objects in the order in which they are stored in the stack
+        if (instantiatedPrefabs.Count > 0)
+        {
+            GameObject objToDelete = instantiatedPrefabs.Pop();
+            objToDelete.SetActive(false);
         }
     }
 }
