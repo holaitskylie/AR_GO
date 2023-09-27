@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class OpenUI : MonoBehaviour
 {
+    //To Open & Close Inventory Panel
+ 
     public GameObject inventoryUI;
     
 

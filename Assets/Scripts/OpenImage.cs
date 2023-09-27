@@ -6,11 +6,11 @@ using UnityEngine.UI;
 
 public class OpenImage : MonoBehaviour
 {
-    //��ư UI ����Ʈ
-    public List<Button> buttons = new List<Button>();
+    [SerializeField]
+    private List<Button> buttons = new List<Button>();
 
-    //�̹��� UI ����Ʈ
-    public List<Image> images = new List<Image>();
+    [SerializeField]
+    private List<Image> objImages = new List<Image>();
 
     Dictionary<Button, Image> imageDict = new Dictionary<Button, Image>();
 
@@ -23,7 +23,7 @@ public class OpenImage : MonoBehaviour
         int index = 0;
         foreach(Button button in buttons)
         {
-            Image image = images[index];
+            Image image = objImages[index];
             imageDict.Add(button, image);
             button.onClick.AddListener(() => OnButtonClick(button));
             index++;
@@ -36,7 +36,7 @@ public class OpenImage : MonoBehaviour
         int index = 0;
         foreach (Button button in buttons)
         {
-            Image image = images[index];
+            Image image = this.objImages[index];
             imageDict.Add(button, image);
             button.onClick.AddListener(() => OnButtonClick(button));
             index++;
