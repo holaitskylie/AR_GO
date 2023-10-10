@@ -6,18 +6,14 @@ using UnityEngine.UI;
 
 public class OpenImage : MonoBehaviour
 {
-    //��ư UI ����Ʈ
     public List<Button> buttons = new List<Button>();
 
-    //�̹��� UI ����Ʈ
     public List<Image> images = new List<Image>();
 
     Dictionary<Button, Image> imageDict = new Dictionary<Button, Image>();
 
     private Image currentImage;   
 
-
-    // Start is called before the first frame update
     void Start()
     {
         int index = 0;
@@ -27,8 +23,7 @@ public class OpenImage : MonoBehaviour
             imageDict.Add(button, image);
             button.onClick.AddListener(() => OnButtonClick(button));
             index++;
-        }
-        
+        }        
     }
 
     void Update()
@@ -41,30 +36,25 @@ public class OpenImage : MonoBehaviour
             button.onClick.AddListener(() => OnButtonClick(button));
             index++;
         }
-
     }
 
     void OnButtonClick(Button button)
-    {    
-      
-            if (currentImage != null)
-            {
-                currentImage.gameObject.SetActive(false);
-            }
+    {          
+        if (currentImage != null)
+        {
+            currentImage.gameObject.SetActive(false);
+        }
 
-            if (imageDict.TryGetValue(button, out Image image))
-            {
-                image.gameObject.SetActive(true);
+        if (imageDict.TryGetValue(button, out Image image))
+        {
+            image.gameObject.SetActive(true);
 
-                currentImage = image;
-
-            }               
-
+            currentImage = image;
+        }
     }
 
     public void CloseImage()
     {
         currentImage.gameObject.SetActive(false);
     }   
-
 }

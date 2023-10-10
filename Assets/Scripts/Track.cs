@@ -17,7 +17,6 @@ public class Track : MonoBehaviour
     Dictionary<GameObject, Image> dict2 = new Dictionary<GameObject, Image>();
 
     public GameObject activeGameObject = null;
-      
 
     void Start()
     {
@@ -33,7 +32,8 @@ public class Track : MonoBehaviour
             dict2.Add(obj2, image);
             image.gameObject.SetActive(false);
             index++;
-        }        
+        }
+
     }
 
     void OnEnable()
@@ -51,7 +51,8 @@ public class Track : MonoBehaviour
         foreach (ARTrackedImage t in eventArgs.added)
         {
             UpdateImage(t);
-        }        
+        }
+        
     }
 
     void UpdateImage(ARTrackedImage t)
@@ -79,13 +80,4 @@ public class Track : MonoBehaviour
             image.gameObject.SetActive(true); 
         }
     }
-
-    //public void DeleteActiveObject()
-    //{
-    //    if (activeGameObject != null)
-    //    {
-    //        Destroy(activeGameObject);
-    //        activeGameObject = null;
-    //    }
-    //}
 }

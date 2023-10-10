@@ -1992,6 +1992,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cube
       objectReference: {fileID: 0}
+    - target: {fileID: 1023649857015830734, guid: b33a995248a9f6c47a48486e779ba9da, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5883723798897541288, guid: b33a995248a9f6c47a48486e779ba9da, type: 3}
       propertyPath: m_RootOrder
       value: 4

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR.ARFoundation;
 
 public class OpenUI : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class OpenUI : MonoBehaviour
 
     public Track track;
     public Button deleteButton;
+    public ARTrackedImageManager imageManager;
 
     void Start()
     {
@@ -33,5 +35,7 @@ public class OpenUI : MonoBehaviour
             Destroy(track.activeGameObject);
             track.activeGameObject = null;
         }
+
+        imageManager.enabled = false;
     }
 }
