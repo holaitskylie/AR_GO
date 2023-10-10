@@ -10,12 +10,13 @@ public class Track : MonoBehaviour
 {
     public ARTrackedImageManager manager;
 
-    public List<GameObject> list1 = new List<GameObject>();      
+    public List<GameObject> list1 = new List<GameObject>();
     Dictionary<string, GameObject> dict1 = new Dictionary<string, GameObject>();
 
     public List<Image> images = new List<Image>();
-    Dictionary<GameObject, Image> dict2 = new Dictionary<GameObject, Image>();  
-    
+    Dictionary<GameObject, Image> dict2 = new Dictionary<GameObject, Image>();
+
+    private GameObject activeGameObject = null;
 
     void Start()
     {
@@ -57,15 +58,19 @@ public class Track : MonoBehaviour
     void UpdateImage(ARTrackedImage t)
     {
         string name = t.referenceImage.name;
-
         GameObject obj = dict1[name];
-
         obj.transform.position = t.transform.position;
         obj.transform.rotation = t.transform.rotation;
-        obj.SetActive(true);
-             
-        Mapping(obj);           
 
+        if (activeGameObject != null)
+        {
+            activeGameObject.SetActive(false);
+        }
+
+        obj.SetActive(true);
+        activeGameObject = obj;
+
+        Mapping(obj);
     }
 
     public void Mapping(GameObject ActiveObj)
