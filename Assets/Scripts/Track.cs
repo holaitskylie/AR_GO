@@ -18,6 +18,8 @@ public class Track : MonoBehaviour
 
     private GameObject activeGameObject = null;
 
+    public Button deleteButton;
+
     void Start()
     {
         foreach (GameObject obj in list1)
@@ -34,6 +36,7 @@ public class Track : MonoBehaviour
             index++;
         }
 
+        deleteButton.onClick.AddListener(DeleteActiveObject);
     }
 
     void OnEnable()
@@ -51,8 +54,7 @@ public class Track : MonoBehaviour
         foreach (ARTrackedImage t in eventArgs.added)
         {
             UpdateImage(t);
-        }
-        
+        }        
     }
 
     void UpdateImage(ARTrackedImage t)
@@ -78,6 +80,15 @@ public class Track : MonoBehaviour
         if(dict2.TryGetValue(ActiveObj, out Image image))
         {
             image.gameObject.SetActive(true); 
+        }
+    }
+
+    public void DeleteActiveObject()
+    {
+        if (activeGameObject != null)
+        {
+            Destroy(activeGameObject);
+            activeGameObject = null;
         }
     }
 }
