@@ -16,9 +16,8 @@ public class Track : MonoBehaviour
     public List<Image> images = new List<Image>();
     Dictionary<GameObject, Image> dict2 = new Dictionary<GameObject, Image>();
 
-    private GameObject activeGameObject = null;
-
-    public Button deleteButton;
+    public GameObject activeGameObject = null;
+      
 
     void Start()
     {
@@ -34,9 +33,7 @@ public class Track : MonoBehaviour
             dict2.Add(obj2, image);
             image.gameObject.SetActive(false);
             index++;
-        }
-
-        deleteButton.onClick.AddListener(DeleteActiveObject);
+        }        
     }
 
     void OnEnable()
@@ -83,12 +80,12 @@ public class Track : MonoBehaviour
         }
     }
 
-    public void DeleteActiveObject()
-    {
-        if (activeGameObject != null)
-        {
-            Destroy(activeGameObject);
-            activeGameObject = null;
-        }
-    }
+    //public void DeleteActiveObject()
+    //{
+    //    if (activeGameObject != null)
+    //    {
+    //        Destroy(activeGameObject);
+    //        activeGameObject = null;
+    //    }
+    //}
 }

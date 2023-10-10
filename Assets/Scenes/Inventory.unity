@@ -1693,6 +1693,7 @@ MonoBehaviour:
   - {fileID: 80370546}
   - {fileID: 305103763}
   - {fileID: 339080997}
+  activeGameObject: {fileID: 0}
 --- !u!114 &517832687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4404,6 +4405,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryUI: {fileID: 691148711}
+  track: {fileID: 0}
+  deleteButton: {fileID: 0}
 --- !u!4 &1379482106
 Transform:
   m_ObjectHideFlags: 0
@@ -4559,7 +4562,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1379482105}
         m_TargetAssemblyTypeName: OpenUI, Assembly-CSharp
-        m_MethodName: OpenInventory
+        m_MethodName: DeleteActiveObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
