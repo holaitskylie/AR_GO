@@ -18,6 +18,9 @@ public class Track : MonoBehaviour
 
     public GameObject activeGameObject = null;
 
+    public SliderController scaleSliderController;
+    public SliderController rotateSliderController;
+
     void Start()
     {
         foreach (GameObject obj in list1)
@@ -69,6 +72,9 @@ public class Track : MonoBehaviour
 
         obj.SetActive(true);
         activeGameObject = obj;
+
+        scaleSliderController.controlledObject = activeGameObject;
+        rotateSliderController.controlledObject = activeGameObject;
 
         Mapping(obj);
     }

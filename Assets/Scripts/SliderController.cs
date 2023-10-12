@@ -12,6 +12,8 @@ public class SliderController : MonoBehaviour
     public float rotateMinValue;
     public float rotateMaxValue;
 
+    public GameObject controlledObject;
+
     void Start()
     {
         scaleSlider = GameObject.Find("ScaleSlider").GetComponent<Slider>();
@@ -29,11 +31,19 @@ public class SliderController : MonoBehaviour
 
     void ScaleSliderUpdate(float value)
     {
-        transform.localScale = new Vector3(value, value, value);
+        //transform.localScale = new Vector3(value, value, value);
+        if (controlledObject != null)
+        {
+            controlledObject.transform.localScale = new Vector3(value, value, value);
+        }
     }
 
     void RotateSliderUpdate(float value)
     {
-        transform.localEulerAngles = new Vector3(transform.rotation.x, value, transform.rotation.z);
+        //transform.localEulerAngles = new Vector3(transform.rotation.x, value, transform.rotation.z);
+        if (controlledObject != null)
+        {
+            controlledObject.transform.localEulerAngles = new Vector3(controlledObject.transform.rotation.x, value, controlledObject.transform.rotation.z);
+        }
     }
 }
