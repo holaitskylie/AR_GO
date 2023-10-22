@@ -21,6 +21,8 @@ public class Track : MonoBehaviour
     public SliderController scaleSliderController;
     public SliderController rotateSliderController;
 
+    public Transform spawnPoint;
+
     void Start()
     {
         foreach (GameObject obj in list1)
@@ -54,21 +56,21 @@ public class Track : MonoBehaviour
         foreach (ARTrackedImage t in eventArgs.added)
         {
             UpdateImage(t);
-        }
-        
+        }        
     }
 
     void UpdateImage(ARTrackedImage t)
     {
         string name = t.referenceImage.name;
         GameObject obj = dict1[name];
-        obj.transform.position = t.transform.position;
-        obj.transform.rotation = t.transform.rotation;
+        obj.transform.position = spawnPoint.position;
+        obj.transform.rotation = spawnPoint.rotation;
+        obj.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
 
-        if (activeGameObject != null)
-        {
-            activeGameObject.SetActive(false);
-        }
+        //if (activeGameObject != null)
+        //{
+        //    activeGameObject.SetActive(false);
+        //}
 
         obj.SetActive(true);
         activeGameObject = obj;
