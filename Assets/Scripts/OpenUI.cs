@@ -36,6 +36,7 @@ public class OpenUI : MonoBehaviour
             track.activeGameObject = null;
         }
 
+        imageManager.enabled = true;
         // imageManager.enabled = false;
     }
 }

@@ -83,6 +83,11 @@ public class Track : MonoBehaviour
 
             Mapping(obj);
         }
+
+        if (activeGameObject != null)
+        {
+            manager.enabled = false;
+        }
         // Following logic was to disable image when it's not under tracking state.
 
         //else if (t.trackingState != TrackingState.Tracking)
