@@ -4444,9 +4444,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryUI: {fileID: 691148711}
-  track: {fileID: 0}
-  deleteButton: {fileID: 0}
-  imageManager: {fileID: 0}
+  track: {fileID: 517832686}
+  deleteButton: {fileID: 1404948498}
+  imageManager: {fileID: 517832683}
 --- !u!4 &1379482106
 Transform:
   m_ObjectHideFlags: 0

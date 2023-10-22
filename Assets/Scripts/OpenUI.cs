@@ -32,10 +32,10 @@ public class OpenUI : MonoBehaviour
     {
         if (track.activeGameObject != null)
         {
-            Destroy(track.activeGameObject);
+            track.activeGameObject.SetActive(false);
             track.activeGameObject = null;
         }
 
-        imageManager.enabled = false;
+        // imageManager.enabled = false;
     }
 }
