@@ -11,11 +11,17 @@ public class OpenUI : MonoBehaviour
     public Track track;
     public Button deleteButton;
     public ARTrackedImageManager imageManager;
+    public GameObject scaleSlider;
+    public GameObject rotateSlider;
+
+    [HideInInspector] public SliderController sliderController;
 
     void Start()
     {
         inventoryUI.SetActive(false);
         deleteButton.onClick.AddListener(DeleteActiveObject);
+
+        sliderController = FindObjectOfType<SliderController>();
     }
 
     public void OpenInventory()
@@ -37,6 +43,6 @@ public class OpenUI : MonoBehaviour
         }
 
         imageManager.enabled = true;
-        // imageManager.enabled = false;
+        sliderController.DeactivateSliders();
     }
 }

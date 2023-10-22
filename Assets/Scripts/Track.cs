@@ -21,6 +21,10 @@ public class Track : MonoBehaviour
 
     public SliderController scaleSliderController;
     public SliderController rotateSliderController;
+    [HideInInspector] public SliderController sliderManager;
+
+    //public GameObject scaleSlider;
+    //public GameObject rotateSlider;
 
     public Transform spawnPoint;
 
@@ -40,6 +44,7 @@ public class Track : MonoBehaviour
             index++;
         }
 
+        sliderManager = FindObjectOfType<SliderController>();
     }
 
     void OnEnable()
@@ -81,6 +86,8 @@ public class Track : MonoBehaviour
             scaleSliderController.controlledObject = activeGameObject;
             rotateSliderController.controlledObject = activeGameObject;
 
+            sliderManager.ActivateSliders();
+
             Mapping(obj);
         }
 
@@ -88,20 +95,13 @@ public class Track : MonoBehaviour
         {
             manager.enabled = false;
         }
+
         // Following logic was to disable image when it's not under tracking state.
 
         //else if (t.trackingState != TrackingState.Tracking)
         //{
         //    obj.SetActive(false);
         //}
-
-        //obj.SetActive(true);
-        //activeGameObject = obj;
-
-        //scaleSliderController.controlledObject = activeGameObject;
-        //rotateSliderController.controlledObject = activeGameObject;
-
-        //Mapping(obj);
     }
 
     public void Mapping(GameObject ActiveObj)

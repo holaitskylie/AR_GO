@@ -7,26 +7,32 @@ public class SliderController : MonoBehaviour
 {
     private Slider scaleSlider;
     private Slider rotateSlider;
-    public float scaleMinValue;
-    public float scaleMaxValue;
-    public float rotateMinValue;
-    public float rotateMaxValue;
+    public float scaleMinValue = 0.09f;
+    public float scaleMaxValue = 100f;
+    public float rotateMinValue = 0;
+    public float rotateMaxValue = 360;
+
+    public GameObject scaleSliderObject;
+    public GameObject rotateSliderObject;
 
     public GameObject controlledObject;
 
     void Start()
     {
-        scaleSlider = GameObject.Find("ScaleSlider").GetComponent<Slider>();
+        scaleSlider = GameObject.Find("Scale Slider").GetComponent<Slider>();
         scaleSlider.minValue = scaleMinValue;
         scaleSlider.maxValue = scaleMaxValue;
 
         scaleSlider.onValueChanged.AddListener(ScaleSliderUpdate);
 
-        rotateSlider = GameObject.Find("RotateSlider").GetComponent<Slider>();
+        rotateSlider = GameObject.Find("Rotate Slider").GetComponent<Slider>();
         rotateSlider.minValue = rotateMinValue;
         rotateSlider.maxValue = rotateMaxValue;
 
         rotateSlider.onValueChanged.AddListener(RotateSliderUpdate);
+
+        scaleSliderObject.SetActive(false);
+        rotateSliderObject.SetActive(false);
     }
 
     void ScaleSliderUpdate(float value)
@@ -45,5 +51,17 @@ public class SliderController : MonoBehaviour
         {
             controlledObject.transform.localEulerAngles = new Vector3(controlledObject.transform.rotation.x, value, controlledObject.transform.rotation.z);
         }
+    }
+
+    public void ActivateSliders()
+    {
+        scaleSliderObject.SetActive(true);
+        rotateSliderObject.SetActive(true);
+    }
+
+    public void DeactivateSliders()
+    {
+        scaleSliderObject.SetActive(false);
+        rotateSliderObject.SetActive(false);
     }
 }
