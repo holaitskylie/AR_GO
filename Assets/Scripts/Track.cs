@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.ARFoundation;
+using UnityEngine.XR.ARSubsystems;
 using UnityEngine.UI;
 
 
@@ -56,7 +57,12 @@ public class Track : MonoBehaviour
         foreach (ARTrackedImage t in eventArgs.added)
         {
             UpdateImage(t);
-        }        
+        }
+
+        foreach (ARTrackedImage t in eventArgs.updated)
+        {
+            UpdateImage(t);
+        }
     }
 
     void UpdateImage(ARTrackedImage t)
@@ -67,18 +73,30 @@ public class Track : MonoBehaviour
         obj.transform.rotation = spawnPoint.rotation;
         obj.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
 
-        //if (activeGameObject != null)
+        if (t.trackingState == TrackingState.Tracking && !obj.activeSelf)
+        {
+            obj.SetActive(true);
+            activeGameObject = obj;
+
+            scaleSliderController.controlledObject = activeGameObject;
+            rotateSliderController.controlledObject = activeGameObject;
+
+            Mapping(obj);
+        }
+        // Following logic was to disable image when it's not under tracking state.
+
+        //else if (t.trackingState != TrackingState.Tracking)
         //{
-        //    activeGameObject.SetActive(false);
+        //    obj.SetActive(false);
         //}
 
-        obj.SetActive(true);
-        activeGameObject = obj;
+        //obj.SetActive(true);
+        //activeGameObject = obj;
 
-        scaleSliderController.controlledObject = activeGameObject;
-        rotateSliderController.controlledObject = activeGameObject;
+        //scaleSliderController.controlledObject = activeGameObject;
+        //rotateSliderController.controlledObject = activeGameObject;
 
-        Mapping(obj);
+        //Mapping(obj);
     }
 
     public void Mapping(GameObject ActiveObj)
