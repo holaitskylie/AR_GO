@@ -2272,17 +2272,33 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 634994960, guid: b33a995248a9f6c47a48486e779ba9da, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 634994960, guid: b33a995248a9f6c47a48486e779ba9da, type: 3}
       propertyPath: m_ARSessionOrigin
       value: 
       objectReference: {fileID: 517832684}
+    - target: {fileID: 634994961, guid: b33a995248a9f6c47a48486e779ba9da, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 634994961, guid: b33a995248a9f6c47a48486e779ba9da, type: 3}
       propertyPath: m_ARSessionOrigin
       value: 
       objectReference: {fileID: 517832684}
     - target: {fileID: 634994962, guid: b33a995248a9f6c47a48486e779ba9da, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 634994962, guid: b33a995248a9f6c47a48486e779ba9da, type: 3}
       propertyPath: m_ARSessionOrigin
       value: 
       objectReference: {fileID: 517832684}
+    - target: {fileID: 634994963, guid: b33a995248a9f6c47a48486e779ba9da, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 634994963, guid: b33a995248a9f6c47a48486e779ba9da, type: 3}
       propertyPath: m_ARSessionOrigin
       value: 
@@ -4356,10 +4372,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1419007602}
   m_HandleRect: {fileID: 193440571}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: 1
+  m_MaxValue: 2.5
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5113,8 +5129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c2c525341440794a95366eb5d787a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleMinValue: 0.1
-  scaleMaxValue: 0.3
+  scaleMinValue: 1
+  scaleMaxValue: 3
   rotateMinValue: 0
   rotateMaxValue: 360
   scaleSliderObject: {fileID: 1076049476}
@@ -6258,7 +6274,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 913491952}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 360
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -8592,6 +8608,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2400209023583648600, guid: 1ea1712ad01f88c4ead7d189b9511bc8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2400209023583648600, guid: 1ea1712ad01f88c4ead7d189b9511bc8, type: 3}
       propertyPath: m_ARSessionOrigin
       value: 
       objectReference: {fileID: 517832684}
@@ -8601,6 +8621,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3283430327391279504, guid: 1ea1712ad01f88c4ead7d189b9511bc8, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4052636259856911996, guid: 1ea1712ad01f88c4ead7d189b9511bc8, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4052636259856911996, guid: 1ea1712ad01f88c4ead7d189b9511bc8, type: 3}
@@ -8652,9 +8676,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7090998508861112515, guid: 1ea1712ad01f88c4ead7d189b9511bc8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7090998508861112515, guid: 1ea1712ad01f88c4ead7d189b9511bc8, type: 3}
       propertyPath: m_ARSessionOrigin
       value: 
       objectReference: {fileID: 517832684}
+    - target: {fileID: 9072252682223595800, guid: 1ea1712ad01f88c4ead7d189b9511bc8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9072252682223595800, guid: 1ea1712ad01f88c4ead7d189b9511bc8, type: 3}
       propertyPath: m_ARSessionOrigin
       value: 

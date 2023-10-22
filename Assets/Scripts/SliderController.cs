@@ -7,8 +7,8 @@ public class SliderController : MonoBehaviour
 {
     private Slider scaleSlider;
     private Slider rotateSlider;
-    public float scaleMinValue = 0.09f;
-    public float scaleMaxValue = 100f;
+    public float scaleMinValue = 1f;
+    public float scaleMaxValue = 3f;
     public float rotateMinValue = 0;
     public float rotateMaxValue = 360;
 
