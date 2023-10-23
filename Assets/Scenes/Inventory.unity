@@ -140,7 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400274, guid: a91b4416de1954a4d936f7f677072f6b, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 400274, guid: a91b4416de1954a4d936f7f677072f6b, type: 3}
       propertyPath: m_LocalScale.x
@@ -782,64 +782,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 156204525}
   m_CullTransparentMesh: 1
---- !u!1 &209040126
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 209040128}
-  - component: {fileID: 209040127}
-  m_Layer: 0
-  m_Name: LeanTouch
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &209040127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 209040126}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fc98219a83dff145947365dc914d06e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tapThreshold: 0.2
-  swipeThreshold: 100
-  referenceDpi: 200
-  guiLayers:
-    serializedVersion: 2
-    m_Bits: 32
-  useTouch: 1
-  useHover: 1
-  useMouse: 1
-  useSimulator: 1
-  disableMouseEmulation: 1
-  recordFingers: 1
-  recordThreshold: 5
-  recordLimit: 10
---- !u!4 &209040128
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 209040126}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &214901566 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 44d6f2a6af711734a828000cf1aa4475, type: 3}
@@ -942,7 +884,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6489677825025513408, guid: df4ee7dec7e86374db532d6447dc7d07, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6489677825025513408, guid: df4ee7dec7e86374db532d6447dc7d07, type: 3}
       propertyPath: m_LocalScale.x
@@ -3328,7 +3270,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1587594465480234403, guid: 0133255a93c36f343b8cab3ba1e69c4c, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 1587594465480234403, guid: 0133255a93c36f343b8cab3ba1e69c4c, type: 3}
       propertyPath: m_LocalScale.x
@@ -3646,7 +3588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4341be6e8dc45154e961fe618f1fda29, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4341be6e8dc45154e961fe618f1fda29, type: 3}
       propertyPath: m_LocalScale.x
@@ -4475,7 +4417,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400250, guid: 83289961c5fa0d84089af5b69af31dfd, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400250, guid: 83289961c5fa0d84089af5b69af31dfd, type: 3}
       propertyPath: m_LocalScale.x
@@ -4596,7 +4538,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1988962475142755031, guid: 8f2a9caa932d8c64e941e94e65564ef7, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1988962475142755031, guid: 8f2a9caa932d8c64e941e94e65564ef7, type: 3}
       propertyPath: m_LocalScale.x
@@ -5474,7 +5416,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 429906, guid: 848fee74ba65af946af876633dda49f7, type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 429906, guid: 848fee74ba65af946af876633dda49f7, type: 3}
       propertyPath: m_LocalScale.x
@@ -5773,7 +5715,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 44d6f2a6af711734a828000cf1aa4475, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 44d6f2a6af711734a828000cf1aa4475, type: 3}
       propertyPath: m_LocalScale.x
@@ -5983,7 +5925,7 @@ PrefabInstance:
       objectReference: {fileID: -2481596286897056705, guid: 3b725968627573349972ae90c6cfddca, type: 3}
     - target: {fileID: -4216859302048453862, guid: 3b725968627573349972ae90c6cfddca, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 3b725968627573349972ae90c6cfddca, type: 3}
       propertyPath: m_LocalScale.x
@@ -8083,7 +8025,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 437188, guid: 064337e5bc5105644b5839436a1346e1, type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 437188, guid: 064337e5bc5105644b5839436a1346e1, type: 3}
       propertyPath: m_LocalScale.x
@@ -8963,7 +8905,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1920207156701544478, guid: 77dd5cec3c8e0a34caabfb82996035c1, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1920207156701544478, guid: 77dd5cec3c8e0a34caabfb82996035c1, type: 3}
       propertyPath: m_LocalScale.x
@@ -9142,7 +9084,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5868923881790866452, guid: 1ea1712ad01f88c4ead7d189b9511bc8, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5868923881790866452, guid: 1ea1712ad01f88c4ead7d189b9511bc8, type: 3}
       propertyPath: m_LocalScale.x
