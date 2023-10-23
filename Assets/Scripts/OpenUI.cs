@@ -6,8 +6,6 @@ using UnityEngine.XR.ARFoundation;
 
 public class OpenUI : MonoBehaviour
 {
-    //To Open & Close Inventory Panel
- 
     public GameObject inventoryUI;
 
     public Track track;

@@ -19,7 +19,7 @@ public class OpenImage : MonoBehaviour
         int index = 0;
         foreach(Button button in buttons)
         {
-            Image image = objImages[index];
+            Image image = images[index];
             imageDict.Add(button, image);
             button.onClick.AddListener(() => OnButtonClick(button));
             index++;
@@ -31,7 +31,7 @@ public class OpenImage : MonoBehaviour
         int index = 0;
         foreach (Button button in buttons)
         {
-            Image image = this.objImages[index];
+            Image image = images[index];
             imageDict.Add(button, image);
             button.onClick.AddListener(() => OnButtonClick(button));
             index++;

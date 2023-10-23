@@ -35,45 +35,5 @@ MonoBehaviour:
       m_GuidHigh: 9954821278018200331
     m_Size: {x: 0.2, y: 0.26899442}
     m_SpecifySize: 1
-    m_Name: Sparrow
-    m_Texture: {fileID: 0}
-  - m_SerializedGuid:
-      m_GuidLow: 4681431114300729181
-      m_GuidHigh: 3139108685526191548
-    m_SerializedTextureGuid:
-      m_GuidLow: 1604650017059360465
-      m_GuidHigh: 747193941346860091
-    m_Size: {x: 0.2, y: 0.15610425}
-    m_SpecifySize: 1
-    m_Name: Mallad
-    m_Texture: {fileID: 0}
-  - m_SerializedGuid:
-      m_GuidLow: 4720188713210979181
-      m_GuidHigh: 17489343236655259574
-    m_SerializedTextureGuid:
-      m_GuidLow: 3491556694361465277
-      m_GuidHigh: 4471809794512000475
-    m_Size: {x: 0.2, y: 0.15}
-    m_SpecifySize: 1
-    m_Name: Butterfly
-    m_Texture: {fileID: 0}
-  - m_SerializedGuid:
-      m_GuidLow: 5748638009530955292
-      m_GuidHigh: 628402529089745550
-    m_SerializedTextureGuid:
-      m_GuidLow: 6378432226971916454
-      m_GuidHigh: 3112128752395563369
-    m_Size: {x: 0.2, y: 0.23912038}
-    m_SpecifySize: 1
-    m_Name: Mantis
-    m_Texture: {fileID: 0}
-  - m_SerializedGuid:
-      m_GuidLow: 4996677581951613159
-      m_GuidHigh: 9341499825782168708
-    m_SerializedTextureGuid:
-      m_GuidLow: 11782653684822368239
-      m_GuidHigh: 4622150940205149817
-    m_Size: {x: 0.2, y: 0.26666668}
-    m_SpecifySize: 1
-    m_Name: Waterlily
+    m_Name: Cube
     m_Texture: {fileID: 0}
