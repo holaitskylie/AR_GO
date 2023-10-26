@@ -1924,8 +1924,8 @@ MonoBehaviour:
   - {fileID: 305103763}
   - {fileID: 339080997}
   activeGameObject: {fileID: 0}
-  scaleSliderController: {fileID: 1379482108}
-  rotateSliderController: {fileID: 1379482108}
+  scaleSliderController: {fileID: 0}
+  rotateSliderController: {fileID: 0}
   sliderManager: {fileID: 0}
   spawnPoint: {fileID: 179571091}
 --- !u!114 &517832687
@@ -4833,7 +4833,6 @@ GameObject:
   - component: {fileID: 1379482106}
   - component: {fileID: 1379482105}
   - component: {fileID: 1379482107}
-  - component: {fileID: 1379482108}
   m_Layer: 0
   m_Name: UI Manager
   m_TagString: Untagged
@@ -4913,18 +4912,6 @@ MonoBehaviour:
   - {fileID: 691061022}
   - {fileID: 767373965}
   - {fileID: 42470243}
---- !u!114 &1379482108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1379482104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1392064732 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8450430534409026536, guid: c9a7e0a1d5e591e40b460912187bd8c4, type: 3}
@@ -9018,6 +9005,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8450430534074666913, guid: c9a7e0a1d5e591e40b460912187bd8c4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8450430534409026542, guid: c9a7e0a1d5e591e40b460912187bd8c4, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
