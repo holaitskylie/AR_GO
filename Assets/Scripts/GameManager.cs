@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,7 +6,7 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    //½Ì±ÛÅÏ Á¢±Ù¿ë ÇÁ·ÎÆÛÆ¼
+    //ì‹±ê¸€í„´ ì ‘ê·¼ìš© í”„ë¡œí¼í‹°
     public static GameManager instance
     {
         get

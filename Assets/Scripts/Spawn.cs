@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +9,7 @@ public class Spawn : MonoBehaviour
 
     void Start()
     {
-        //audio = GetComponent<AudioSource>();  ³ªÁß¿¡ ¿Àµğ¿À Ãß°¡ ½Ã ³ÖÀ» ¿¹Á¤
+        //audio = GetComponent<AudioSource>();  ë‚˜ì¤‘ì— ì˜¤ë””ì˜¤ ì¶”ê°€ ì‹œ ë„£ì„ ì˜ˆì •
 
         StartCoroutine(WaitAndSpawn());
         
@@ -35,7 +35,7 @@ public class Spawn : MonoBehaviour
 
                 rb.AddForce(Vector3.up * Random.Range(4.0f, 10.0f), ForceMode.VelocityChange);
             }
-            //audio.Play(); ¿Àµğ¿À Ãß°¡ ½Ã È°¿ë ¿¹Á¤
+            //audio.Play(); ì˜¤ë””ì˜¤ ì¶”ê°€ ì‹œ í™œìš© ì˜ˆì •
         }
     }
 
