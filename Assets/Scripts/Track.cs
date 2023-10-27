@@ -40,7 +40,7 @@ public class Track : MonoBehaviour
         }
 
         int index = 0;
-        foreach(GameObject obj2 in list1)
+        foreach (GameObject obj2 in list1)
         {
             Image image = images[index];
             dict2.Add(obj2, image);
@@ -49,6 +49,23 @@ public class Track : MonoBehaviour
         }
 
         sliderManager = FindObjectOfType<SliderController>();
+
+        // 이미지 리스트를 반복하며 초기 활성화 상태를 복원
+        for (int index_Img = 0; index_Img < images.Count; index_Img++)
+        {
+            string key = "ImageState_" + index_Img.ToString();
+            int isActive = PlayerPrefs.GetInt(key, 0); // 기본값 0은 비활성화 상태를 나타냅니다
+
+            // 이미지의 활성화 상태를 복원
+            if (isActive == 1)
+            {
+                images[index_Img].gameObject.SetActive(true);
+            }
+            else
+            {
+                images[index_Img].gameObject.SetActive(false);
+            }
+        }
     }
 
     void OnEnable()
@@ -113,7 +130,13 @@ public class Track : MonoBehaviour
     {
         if(dict2.TryGetValue(ActiveObj, out Image image))
         {
-            image.gameObject.SetActive(true); 
+            image.gameObject.SetActive(true);
+
+            // 이미지의 리스트 인덱스를 문자열로 변환하여 PlayerPrefs에 저장
+            int index = images.IndexOf(image);
+            string key = "ImageState_" + index.ToString();
+            PlayerPrefs.SetInt(key, 1); // 1은 활성화 상태를 나타냅니다
+            PlayerPrefs.Save(); // 변경사항 저장
         }
     }
 }
