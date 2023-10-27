@@ -97,7 +97,7 @@ public class Track : MonoBehaviour
         GameObject obj = dict1[name];
         obj.transform.position = spawnPoint.position;
         obj.transform.rotation = spawnPoint.rotation;
-        obj.transform.localScale = new Vector3(1f, 1f, 1f);
+        //obj.transform.localScale = new Vector3(1f, 1f, 1f);
 
         if (t.trackingState == TrackingState.Tracking && !obj.activeSelf)
         {

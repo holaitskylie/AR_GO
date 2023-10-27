@@ -31,8 +31,10 @@ public class SliderController : MonoBehaviour
 
         rotateSlider.onValueChanged.AddListener(RotateSliderUpdate);
 
-        scaleSliderObject.SetActive(false);
-        rotateSliderObject.SetActive(false);
+        //scaleSliderObject.SetActive(false);
+        //rotateSliderObject.SetActive(false);
+
+        ActivateSliders();
     }
 
     void ScaleSliderUpdate(float value)
