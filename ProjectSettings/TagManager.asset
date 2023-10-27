@@ -4,9 +4,20 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Animal
   - frog
   - dragonfly
+  - FxTemporaire
+  - Butterfly
+  - Crow
+  - Dragonfly
+  - Frog
+  - Grasshopper
+  - Honeybee
+  - Mallad
+  - Mantis
+  - Pigeon
+  - Sparrow
+  - Toad
   layers:
   - Default
   - TransparentFX
