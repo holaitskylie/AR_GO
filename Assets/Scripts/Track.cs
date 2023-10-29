@@ -105,6 +105,9 @@ public class Track : MonoBehaviour
             activeGameObject = obj;
 
             scaleSliderController.controlledObject = activeGameObject;
+            scaleSliderController.scaleMinValue = activeGameObject.transform.localScale.x;
+            scaleSliderController.scaleMaxValue = activeGameObject.transform.localScale.x * 2.5f;
+
             rotateSliderController.controlledObject = activeGameObject;
 
             sliderManager.ActivateSliders();
