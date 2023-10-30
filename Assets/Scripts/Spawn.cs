@@ -6,6 +6,7 @@ public class Spawn : MonoBehaviour
 {
     public Transform[] pos;
     public GameObject[] prefab;
+    public Camera MainCamera;
 
     void Start()
     {
@@ -34,6 +35,8 @@ public class Spawn : MonoBehaviour
                 Rigidbody rb = obj.GetComponent<Rigidbody>();
 
                 rb.AddForce(Vector3.up * Random.Range(4.0f, 10.0f), ForceMode.VelocityChange);
+
+                obj.transform.LookAt(MainCamera.transform);
             }
             //audio.Play(); 오디오 추가 시 활용 예정
         }
