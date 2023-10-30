@@ -27,7 +27,8 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI timeText;
 
-    public bool isGameover { get; private set; }
+    public bool isGameover { get; private set; }    
+    [SerializeField] GameObject infoPanel;
 
     private void Awake()
     {
@@ -35,6 +36,8 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        isGameover = true;
     }
 
     public void AddScore(int newScore)
@@ -47,7 +50,7 @@ public class GameManager : MonoBehaviour
     }
 
     void Update()
-    {
+    {        
         if(LimitTime <=0)
         {
             EndGame();
@@ -58,6 +61,13 @@ public class GameManager : MonoBehaviour
             LimitTime -= Time.deltaTime;
             timeText.text = "Time : " + Mathf.Round(LimitTime);
         }
+    }
+
+    public void StartGame()
+    {
+        infoPanel.SetActive(false);
+        isGameover = false;
+
     }
 
     public void EndGame()
