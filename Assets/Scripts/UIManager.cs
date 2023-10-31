@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,11 +19,11 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    private static UIManager m_instance; //½Ì±ÛÅÏÀÌ ÇÒ´çµÈ º¯¼ö 
+    private static UIManager m_instance; //ì‹±ê¸€í„´ì´ í• ë‹¹ëœ ë³€ìˆ˜ 
 
     public TextMeshProUGUI scoreText;
 
-    private bool isPaused = false; //°ÔÀÓ ÀÏ½Ã Á¤Áö ¿©ºÎ¸¦ ³ªÅ¸³»´Â º¯¼ö
+    private bool isPaused = false; //ê²Œì„ ì¼ì‹œ ì •ì§€ ì—¬ë¶€ë¥¼ ë‚˜íƒ€ë‚´ëŠ” ë³€ìˆ˜
 
     public GameObject gameoverUI;
     public GameObject RestartUI;
@@ -59,14 +59,14 @@ public class UIManager : MonoBehaviour
 
     public void OptionUI(Button button)
     {
-        //°ÔÀÓÀÌ ÀÏ½Ã Á¤ÁöµÇ¾î ÀÖÁö ¾Ê´Ù¸é
+        //ê²Œì„ì´ ì¼ì‹œ ì •ì§€ë˜ì–´ ìˆì§€ ì•Šë‹¤ë©´
         if (!isPaused)
         {
-            //°ÔÀÓ ÀÏ½Ã Á¤Áö
+            //ê²Œì„ ì¼ì‹œ ì •ì§€
             Time.timeScale = 0f;
             isPaused = true;
 
-            //OptionImageUI È°¼ºÈ­
+            //OptionImageUI í™œì„±í™”
             OptionImageUI.SetActive(true);
         }
     }
@@ -75,7 +75,7 @@ public class UIManager : MonoBehaviour
     {
         if (isPaused)
         {
-            //°ÔÀÓ Àç°³
+            //ê²Œì„ ì¬ê°œ
             Time.timeScale = 1f;
             isPaused = false;
 
