@@ -44,6 +44,7 @@ public class OpenUI : MonoBehaviour
             track.activeGameObject = null;
         }
 
+        //<Track.cs> - UpdateImage()에서 ARTrackedImageManger 비활성화한 것을 다시 활성화
         imageManager.enabled = true;
         //sliderController.DeactivateSliders();
     }

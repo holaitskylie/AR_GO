@@ -30,6 +30,7 @@ public class Track : MonoBehaviour
     //public GameObject scaleSlider;
     //public GameObject rotateSlider;
 
+    //AR Camera 자식 오브젝트 : 오브젝트 스폰 위치 지정
     public Transform spawnPoint;
 
     void Start()
@@ -115,6 +116,8 @@ public class Track : MonoBehaviour
             Mapping(obj);
         }
 
+        //중복 트래킹 방지하여 오브젝트를 1개만 활성화되도록
+        //Double Tracking 안됨
         if (activeGameObject != null)
         {
             manager.enabled = false;

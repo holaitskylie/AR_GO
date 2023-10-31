@@ -42,12 +42,14 @@ public class SliderController : MonoBehaviour
 
     private void Update()
     {
+        //슬라이더의 값이 바뀔 때마다 다음 메서드 호출
         scaleSlider.onValueChanged.AddListener(ScaleSliderUpdate);
         rotateSlider.onValueChanged.AddListener(RotateSliderUpdate);
     }
 
     void ScaleSliderUpdate(float value)
     {
+        //<Track.cs> - UpdateImage()에서 scaleMin/MaxValue 값 설정
         scaleSlider.minValue = scaleMinValue;
         scaleSlider.maxValue = scaleMaxValue;
 
