@@ -2496,7 +2496,8 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "\uB2E4\uB978 \uCE5C\uAD6C\uB4E4\uC744 \uBCF4\uACE0 \uC2F6\uC73C\uBA74\n\uC774
-    \uBC84\uD2BC\uC744 \uB20C\uB7EC\uC8FC\uC138\uC694"
+    \uBC84\uD2BC\uC744 \uB204\uB978 \uB2E4\uC74C\uC5D0 \n\uC774\uBBF8\uC9C0\uB97C
+    \uC2A4\uCE94\uD574\uC8FC\uC138\uC694"
 --- !u!222 &531677529
 CanvasRenderer:
   m_ObjectHideFlags: 0
