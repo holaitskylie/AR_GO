@@ -18,9 +18,11 @@ public class OpenUI : MonoBehaviour
 
     void Start()
     {
+        //게임이 시작될 때 인벤토리 창 비활성화
         inventoryUI.SetActive(false);
+        //deleteButton에 On Click 이벤트 등록
         deleteButton.onClick.AddListener(DeleteActiveObject);
-
+        //SliderController에 대한 참조를 가져온다
         sliderController = FindObjectOfType<SliderController>();
     }
     
@@ -38,8 +40,10 @@ public class OpenUI : MonoBehaviour
 
     public void DeleteActiveObject()
     {
+        //<Track.cs>에서 활성화 된 오브젝트가 있다면
         if (track.activeGameObject != null)
         {
+            //활성화 시킨 오브젝트를 비활성화 한다
             track.activeGameObject.SetActive(false);
             track.activeGameObject = null;
         }
