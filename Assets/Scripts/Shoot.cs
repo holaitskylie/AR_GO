@@ -7,15 +7,15 @@ using UnityEngine.UI;
 public class Shoot : MonoBehaviour
 {  
 
-    public Camera camera;
+    public Camera _camera;
     public GameObject prefab1;
 
-    AudioSource audio;
+    AudioSource _audio;
     public AudioClip catchClip;
 
     void Start()
     {
-        audio = GetComponent<AudioSource>();
+        _audio = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -34,7 +34,7 @@ public class Shoot : MonoBehaviour
     public void Fire()
     {
         RaycastHit hit;
-        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+        Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
 
         if(Physics.Raycast(ray, out hit))        
         {        
@@ -43,7 +43,7 @@ public class Shoot : MonoBehaviour
                 Destroy(hit.transform.gameObject);
                 Instantiate(prefab1, hit.point, Quaternion.LookRotation(hit.normal));
                 GameManager.instance.AddScore(10);
-                audio.PlayOneShot(catchClip);
+                _audio.PlayOneShot(catchClip);
             }
 
             if (hit.transform.CompareTag("Frog"))
@@ -51,7 +51,7 @@ public class Shoot : MonoBehaviour
                 Destroy(hit.transform.gameObject);
                 Instantiate(prefab1, hit.point, Quaternion.LookRotation(hit.normal));
                 GameManager.instance.AddScore(50);
-                audio.PlayOneShot(catchClip);
+                _audio.PlayOneShot(catchClip);
             }
 
             if(hit.transform.CompareTag("Butterfly"))
@@ -59,7 +59,7 @@ public class Shoot : MonoBehaviour
                 Destroy(hit.transform.gameObject);
                 Instantiate(prefab1, hit.point, Quaternion.LookRotation(hit.normal));
                 GameManager.instance.AddScore(100);
-                audio.PlayOneShot(catchClip);
+                _audio.PlayOneShot(catchClip);
             }
 
             if (hit.transform.CompareTag("Honeybee"))
@@ -67,7 +67,7 @@ public class Shoot : MonoBehaviour
                 Destroy(hit.transform.gameObject);
                 Instantiate(prefab1, hit.point, Quaternion.LookRotation(hit.normal));
                 GameManager.instance.AddScore(150);
-                audio.PlayOneShot(catchClip);
+                _audio.PlayOneShot(catchClip);
             }
 
             if (hit.transform.CompareTag("Grasshopper"))
@@ -75,7 +75,7 @@ public class Shoot : MonoBehaviour
                 Destroy(hit.transform.gameObject);
                 Instantiate(prefab1, hit.point, Quaternion.LookRotation(hit.normal));
                 GameManager.instance.AddScore(200);
-                audio.PlayOneShot(catchClip);
+                _audio.PlayOneShot(catchClip);
             }
         }
     }    

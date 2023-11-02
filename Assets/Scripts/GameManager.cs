@@ -77,5 +77,4 @@ public class GameManager : MonoBehaviour
         UIManager.instance.SetActiveRestartUI(true);
         UIManager.instance.SetActiveMainUI(true);
     }
-
 }

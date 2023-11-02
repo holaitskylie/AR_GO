@@ -3567,7 +3567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68c98e67570ec342883fa2a63b680c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 26309819}
+  _camera: {fileID: 26309819}
   prefab1: {fileID: 100000, guid: 3156817f64ec68948ad6bb26569b9ef5, type: 3}
   catchClip: {fileID: 8300000, guid: 238e083b13064684b813dd1f6ecda4b1, type: 3}
 --- !u!4 &1566346661
@@ -4042,7 +4042,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1624110378
 MonoBehaviour:
   m_ObjectHideFlags: 0
