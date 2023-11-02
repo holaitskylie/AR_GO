@@ -55,7 +55,7 @@ public class Track : MonoBehaviour
         for (int index_Img = 0; index_Img < images.Count; index_Img++)
         {
             string key = "ImageState_" + index_Img.ToString();
-            int isActive = PlayerPrefs.GetInt(key, 0); // 기본값 0은 비활성화 상태를 나타냅니다
+            int isActive = PlayerPrefs.GetInt(key, 0); // 기본값 0은 비활성화 상태를 나타낸다
 
             // 이미지의 활성화 상태를 복원
             if (isActive == 1)
