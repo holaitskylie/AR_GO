@@ -55,7 +55,7 @@ public class Track : MonoBehaviour
         for (int index_Img = 0; index_Img < images.Count; index_Img++)
         {
             string key = "ImageState_" + index_Img.ToString();
-            int isActive = PlayerPrefs.GetInt(key, 0); // 기본값 0은 비활성화 상태를 나타낸다
+            int isActive = PlayerPrefs.GetInt(key, 0); //0은 비활성화 상태
 
             // 이미지의 활성화 상태를 복원
             if (isActive == 1)
@@ -116,8 +116,7 @@ public class Track : MonoBehaviour
             Mapping(obj);
         }
 
-        //중복 트래킹 방지하여 오브젝트를 1개만 활성화되도록
-        //Double Tracking 안됨
+        //중복 트래킹 방지하여 오브젝트를 1개만 활성화(Double Tracking 방지)        
         if (activeGameObject != null)
         {
             manager.enabled = false;
@@ -141,7 +140,7 @@ public class Track : MonoBehaviour
             // 이미지의 리스트 인덱스를 문자열로 변환하여 PlayerPrefs에 저장
             int index = images.IndexOf(image);
             string key = "ImageState_" + index.ToString();
-            PlayerPrefs.SetInt(key, 1); // 1은 활성화 상태를 나타냅니다
+            PlayerPrefs.SetInt(key, 1); // 1은 활성화 상태
             PlayerPrefs.Save(); // 변경사항 저장
         }
     }
